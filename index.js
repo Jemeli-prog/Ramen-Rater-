@@ -89,7 +89,7 @@ function displayNewRamen(ramen) {
     ramenMenu.appendChild(img);
 }
 
-// Function to initialize the app
+// Function to insitialize the app
 function main() {
     displayRamens();
     addSubmitListener();
