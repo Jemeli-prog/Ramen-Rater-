@@ -9,31 +9,35 @@
 <body>
     
     <h1>Ramen Rater</h1>
+    
     <div id="ramen-menu"></div>
     
     <div id="ramen">
-        <h2 id="ramen-name"></h2>
+        <h2 id="ramen-name">Select a Ramen</h2>
         <h3 id="ramen-restaurant"></h3>
         <img id="ramen-image" src="" alt="Ramen Image">
         <p>Rating: <span id="ramen-rating"></span></p>
         <p>Comment: <span id="ramen-comment"></span></p>
     </div>
 
+    <h2>Add New Ramen</h2>
     <form id="new-ramen-form">
-            
-         <button type="submit">Add Ramen</button>
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" required /><br>
 
-            <label for="name">Name:</label><br>
-            <input type="text" id="name" name="name"/><br>
-            <label for="name">Restaurant:</label><br>
-            <input type="text" id="name" name="name"/><br>
-            <label for="name">Image:</label><br>
-            <input type="text" id="name" name="name"/><br>
-            <label for="name">Rating:</label><br>
-            <input type="text" id="name" name="name"/><br>
-            <label for="name">Comment:</label><br>
-            <input type="text" id="name" name="name"/><br>
-            <button type="submit">Add Ramen</button>
+        <label for="restaurant">Restaurant:</label><br>
+        <input type="text" id="restaurant" name="restaurant" required /><br>
+
+        <label for="image">Image URL:</label><br>
+        <input type="text" id="image" name="image" required /><br>
+
+        <label for="rating">Rating:</label><br>
+        <input type="number" id="rating" name="rating" min="1" max="10" required /><br>
+
+        <label for="comment">Comment:</label><br>
+        <input type="text" id="comment" name="comment" required /><br>
+
+        <button type="submit">Add Ramen</button>
     </form>
 
     <script src="index.js"></script>

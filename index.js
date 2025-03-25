@@ -1,53 +1,46 @@
+// Ramens object
 const ramens = [
-
-
     {
         name: "Shoyu Ramen",
-         restaurant: "Ichiran", 
-         image: "Photos/shoyu1.jpg", 
-         rating: 5, 
-         comment: "Delicious",
-        },
-        {
-            name: "Naruto Ramen",
-            restaurant:"Menya",
-            image:"Photos/naruto.jpg",
-            rating: 6,
-            comment: "flavoured"
+        restaurant: "Ichiran", 
+        image: "Photos/shoyu1.jpg", 
+        rating: 5, 
+        comment: "Delicious",
+    },
+    {
+        name: "Naruto Ramen",
+        restaurant: "Menya",
+        image: "Photos/naruto1.jpg",
+        rating: 6,
+        comment: "Flavoured",
+    },
+    {
+        name: "Nirvana Ramen",
+        restaurant: "Ramen-ya",
+        image: "Photos/nirvana 3.jpg", 
+        rating: 7,
+        comment: "Sweeet",
+    },
+    {
+        name: "Gyukotsu Ramen",
+        restaurant: "Tiffy",
+        image: "Photos/gyukotsu4.jpg",
+        rating: 8,
+        comment: "Delicious",
+    },
+    {
+        name: "Kojiro Ramen",
+        restaurant: "Menya",
+        image: "Photos/kojiro5.jpg",
+        rating: 8,
+        comment: "Delicious",
+    }
+];
 
-        },
-        {
-            name: "Naruto Ramen",
-            restaurant:"Ramen-ya",
-            image:"Photos/nirvana 3.jpg",
-            rating: 7,
-            comment: "sweeet"
-
-        },
-        {
-            name: "Gyukotsu Ramen",
-            restaurant:"Tiffy",
-            image:"Photos/gyukotsu4.jpg",
-            rating: 8,
-            comment: "delicious"
-
-        },
-        {
-            name: "Kojiro Ramen",
-            restaurant:"Menya",
-            image:"Photos/kojiro5.jpg",
-            rating: 8,
-            comment: "Delicious"
-
-        }
-
-]
-
-
-
-// Function to display ramen images
+// Display ramen images function
 function displayRamens() {
     const ramenMenu = document.getElementById("ramen-menu");
+    ramenMenu.innerHTML = ""; 
     ramens.forEach(ramen => {
         const img = document.createElement("img");
         img.src = ramen.image;
@@ -72,11 +65,10 @@ function addSubmitListener() {
         event.preventDefault();
 
         const newRamen = {
-            id: ramens.length + 1,
             name: event.target.name.value,
             restaurant: event.target.restaurant.value,
             image: event.target.image.value,
-            rating: event.target.rating.value,
+            rating: parseInt(event.target.rating.value, 10), // Convert rating to number
             comment: event.target.comment.value,
         };
 
@@ -97,11 +89,13 @@ function displayNewRamen(ramen) {
     ramenMenu.appendChild(img);
 }
 
-// Initialize the app
+// Function to initialize the app
 function main() {
     displayRamens();
     addSubmitListener();
-    handleClick(ramens[0]); // Display first ramen by default
+    if (ramens.length > 0) {
+        handleClick(ramens[0]); // Display first ramen by default
+    }
 }
 
 document.addEventListener("DOMContentLoaded", main);
